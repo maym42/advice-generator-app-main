@@ -12,6 +12,7 @@ window.addEventListener("load", function () {
   insertNewAdviceToElments("", instructionText);
 });
 
+/* btn click */
 btnDice.addEventListener("click", function () {
   getNewAdvice();
 });
