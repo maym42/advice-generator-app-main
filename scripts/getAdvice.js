@@ -37,6 +37,7 @@ function getNewAdvice() {
     });
 }
 
+/* insert advice text to html */
 function insertNewAdviceToElments(numId, adviceText) {
   adviceNumberElement.innerText = "Advice #" + numId;
   adviceTextElement.innerHTML = adviceText;
