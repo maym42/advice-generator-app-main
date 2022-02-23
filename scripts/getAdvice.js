@@ -20,7 +20,6 @@ btnDice.addEventListener("click", function () {
 /*methods */
 function getNewAdvice() {
   let randomNum = Math.floor(Math.random() * 99) + 1;
-  console.log(randomNum);
   let numId, adviceText;
   adviceTextElement.setAttribute("class", "opacity0");
   adviceNumberElement.setAttribute("class", "opacity0");
@@ -28,7 +27,6 @@ function getNewAdvice() {
     .then((response) => response.json())
     .then(function (data) {
       try {
-        console.log(data);
         numId = data.slip.id;
         adviceText = `&#8220;${data.slip.advice}&#8221`;
         insertNewAdviceToElments(numId, adviceText);
