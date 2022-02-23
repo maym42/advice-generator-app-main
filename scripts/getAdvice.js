@@ -17,7 +17,7 @@ btnDice.addEventListener("click", function () {
   getNewAdvice();
 });
 
-/*methods */
+/*methods*/
 function getNewAdvice() {
   let randomNum = Math.floor(Math.random() * 99) + 1;
   let numId, adviceText;
