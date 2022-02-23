@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+:root {
+  /*## Colors*/
+  /*### Primary (text & btn)*/
+  --Light-Cyan: hsl(193, 38%, 86%);
+  --Neon-Green: hsl(150, 100%, 66%);
+  /*### Neutral (BG)*/
+  --Grayish-Blue: hsl(218, 20%, 24%);
+  --Dark-Grayish-Blue: hsl(220, 22%, 16%);
+
+  /*size  Mobile width: 375px height: 667px*/
+  --margin-side-mobile: 4vw;
+  --padding-mobile: 6.4vw;
+  --margin-bottom-divider: 4.5vh;
+  --font-size-mobile-number: 3.2vw;
+  --font-size-mobile-advice: 6.4vw;
+
+  /*size Desktop width:1440px height:800px*/
+  --padding-card-desktop: 3.2vw;
+}
+/*#####################################*/
+/*~~~~~~~~~~~~ Mobile first ~~~~~~~~~~~*/
+/*#####################################*/
+body {
+  position: relative;
+  background-color: var(--Dark-Grayish-Blue);
+  /*flex*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /*text*/
+  font-family: "Manrope", sans-serif;
+  /*size*/
+  height: 100vh;
+  width: 100vw;
+  /*space*/
+  margin: 0;
+}
+.cardAdvice {
+  position: relative;
+  background-color: var(--Grayish-Blue);
+  border-radius: 10px;
+  /*text*/
+  text-align: center;
+  /*space*/
+  padding: var(--padding-mobile);
+  margin-left: var(--margin-side-mobile);
+  margin-right: var(--margin-side-mobile);
+}
+.adviceNumber {
+  /*text*/
+  color: var(--Neon-Green);
+  font-size: var(--font-size-mobile-number);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+#adviceText {
+  /*text*/
+  color: var(--Light-Cyan);
+  font-size: var(--font-size-mobile-advice);
+}
+
+.transitionOpacity1 {
+  transition: opacity 350ms ease-in;
+  opacity: 1;
+}
+
+.opacity0 {
+  opacity: 0;
+}
+
+/*----divider----*/
+.divider {
+  /*image*/
+  background-image: url(../images/pattern-divider-mobile.svg);
+  background-position: center;
+  /*size*/
+  width: 295px;
+  height: 16px;
+  /*space*/
+  margin: auto;
+  margin-bottom: var(--margin-bottom-divider);
+}
+/*-----btn-----*/
+.btnContainer {
+  /*center position absolute*/
+  position: absolute;
+  left: 50%;
+  margin-left: -8.5vw; /*(width/-2)*/
+  top: 100%;
+  margin-top: -8.5vw; /*(height/-2)*/
+}
+.btnDice {
+  position: relative;
+  background-color: var(--Neon-Green);
+  border-radius: 50%;
+  display: inline-block;
+  /*size*/
+  width: 17vw; /*64px*/
+  height: 17vw; /*64px*/
+  /*transition*/
+  transition-duration: 300ms;
+  transition-property: box-shadow;
+  transition-timing-function: ease-in-out;
+}
+.btnDice:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 20px var(--Neon-Green);
+}
+.diceIcon {
+  /*image*/
+  background-image: url(../images/icon-dice.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  /*size*/
+  width: 6.4vw; /*24px*/
+  height: 6.4vw; /*24px*/
+  /*center position absolute*/
+  position: absolute;
+  left: 50%;
+  margin-left: -3.2vw; /*(width/-2)*/
+  top: 50%;
+  margin-top: -3.2vw; /*(height/-2)*/
+}
+/*footer*/
+.attribution {
+  position: absolute;
+  bottom: 2vh;
+  /*text*/
+  font-size: 11px;
+  text-align: center;
+  color: var(--Light-Cyan);
+}
+.attribution a {
+  color: var(--Neon-Green);
+  /*transition*/
+  transition: color 500ms ease-in-out;
+  transition: background-color 500ms ease-in-out;
+}
+.attribution a:hover {
+  color: var(--Dark-Grayish-Blue);
+  background-color: var(--Neon-Green);
+  text-decoration: none;
+}
+
+/*#####################################*/
+/*~~~~~~~~~~~~ Narrow mobile ~~~~~~~~~~*/
+/*#####################################*/
+@media only screen and (max-width: 330px) {
+  .cardAdvice {
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  #adviceText {
+    font-size: 22px;
+  }
+  .divider {
+    width: 240px;
+  }
+}
+
+/*#####################################*/
+/*~~~~~~~~~~~~~~~ Desktop ~~~~~~~~~~~~~*/
+/*#####################################*/
+@media only screen and (min-width: 500px) {
+  .cardAdvice {
+    padding: var(--padding-card-desktop);
+    margin: 0;
+  }
+  /*-----text-----*/
+  .adviceNumber {
+    font-size: 14px;
+  }
+  #adviceText {
+    font-size: 28px;
+    width: 454px;
+  }
+  /*----divider----*/
+  .divider {
+    background-image: url(../images/pattern-divider-desktop.svg);
+    width: 454px;
+    margin: auto;
+    margin-bottom: 24px;
+  }
+  /*-----btn-----*/
+  .btnContainer {
+    margin-left: -32px; /*(width/-2)*/
+    margin-top: -32px; /*(height/-2)*/
+  }
+  .btnDice {
+    width: 64px;
+    height: 64px;
+  }
+  .diceIcon {
+    width: 24px; /*24px*/
+    height: 24px; /*24px*/
+    margin-left: -12px; /*(width/-2)*/
+    margin-top: -12px; /*(height/-2)*/
+  }
+  /*---footer----*/
+  .attribution {
+    bottom: 2vh;
+  }
+}
+
+/*#####################################*/
+/*~~~~~~~~~~~~ Mobile landscape~~~~~~~~~~*/
+/*#####################################*/
+@media all and (max-height: 500px) and (orientation: landscape) {
+  .cardAdvice {
+    padding: var(--padding-card-desktop);
+  }
+  .adviceNumber {
+    font-size: 12px;
+  }
+  #adviceText {
+    font-size: 18px;
+    width: 434px;
+  }
+  /*----divider----*/
+  .divider {
+    width: 434px;
+  }
+  /*-----btn-----*/
+  .btnContainer {
+    margin-left: -27px; /*(width/-2)*/
+    margin-top: -27px; /*(height/-2)*/
+  }
+  .btnDice {
+    width: 54px;
+    height: 54px;
+  }
+  /*footer*/
+  .attribution {
+    left: 2vw;
+    display: inline-block;
+  }
+}
